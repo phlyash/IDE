@@ -18,7 +18,7 @@ namespace IDE
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            using (StreamWriter file = File.CreateText(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "settings.json")))
+            using (StreamWriter file = File.CreateText(Path.Combine(Environment.CurrentDirectory, "settings.json"), "settings.json")))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, settings);
